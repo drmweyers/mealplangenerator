@@ -1,4 +1,4 @@
-import mealsData from './meals.json';
+import mealsData from './meals.JSON';
 import { Meal } from '../types';
 
 export const meals: Meal[] = mealsData;
