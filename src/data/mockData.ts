@@ -1,0 +1,91 @@
+import { DayPlan } from '../types';
+
+// Mock data for development
+export const mockMealPlans: DayPlan[] = [
+  {
+    day_plan_id: "e9a8d6cb-d271-4f5a-9c58-f0a4e971b863",
+    diet_tags: ["keto"],
+    total_kcal: 1900,
+    meals: [
+      {
+        meal_type: "breakfast",
+        meal_name: "Spinach & Cheese Egg Cups",
+        ingredients: ["3 eggs", "30g grated cheddar", "½ cup spinach", "salt", "pepper"],
+        cooking_instructions: "Preheat oven to 350°F (175°C). Grease a muffin tin. Whisk eggs in a bowl. Chop spinach finely. Mix eggs, cheese, and spinach. Season with salt and pepper. Pour mixture into muffin cups, filling each about 2/3 full. Bake for 15-18 minutes until set and slightly golden. Let cool for 5 minutes before removing from tin.",
+        estimated_macros: { kcal: 480, protein_g: 32, carb_g: 6, fat_g: 36 },
+        diet_tags: ["keto", "high-protein", "vegetarian"],
+        image_url: "https://images.pexels.com/photos/4144234/pexels-photo-4144234.jpeg"
+      },
+      {
+        meal_type: "lunch",
+        meal_name: "Avocado Salmon Salad",
+        ingredients: ["4 oz grilled salmon", "2 cups mixed greens", "1/2 avocado, sliced", "1 tbsp olive oil", "1 tsp lemon juice", "salt and pepper to taste"],
+        cooking_instructions: "Season salmon fillet with salt and pepper. Grill for 4 minutes per side until cooked through. Let cool slightly. In a bowl, toss mixed greens with olive oil and lemon juice. Place greens on a plate, top with salmon pieces and avocado slices. Season with additional salt and pepper if desired.",
+        estimated_macros: { kcal: 520, protein_g: 35, carb_g: 8, fat_g: 38 },
+        diet_tags: ["keto", "paleo"],
+        image_url: "https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg"
+      },
+      {
+        meal_type: "dinner",
+        meal_name: "Garlic Butter Steak with Roasted Asparagus",
+        ingredients: ["6 oz ribeye steak", "2 tbsp butter", "2 cloves garlic, minced", "10 asparagus spears", "1 tbsp olive oil", "salt and pepper"],
+        cooking_instructions: "Preheat oven to 425°F. Season steak with salt and pepper. Heat a cast-iron skillet over high heat. Cook steak 3-4 minutes per side for medium-rare. During last minute, add butter and garlic, basting steak with the mixture. Let rest. Toss asparagus with olive oil, salt, and pepper. Roast for 10-12 minutes until tender. Serve steak with asparagus and drizzle with remaining garlic butter.",
+        estimated_macros: { kcal: 650, protein_g: 45, carb_g: 7, fat_g: 48 },
+        diet_tags: ["keto", "paleo"],
+        image_url: "https://images.pexels.com/photos/1639561/pexels-photo-1639561.jpeg"
+      },
+      {
+        meal_type: "snack",
+        meal_name: "Spiced Almonds & Cheese",
+        ingredients: ["1/4 cup almonds", "1 oz aged cheddar", "1/4 tsp paprika", "pinch of salt"],
+        cooking_instructions: "In a small dry skillet, toast almonds over medium heat for 3-4 minutes until fragrant. Toss with paprika and salt while still warm. Let cool. Cut cheese into small cubes. Serve together as a snack.",
+        estimated_macros: { kcal: 250, protein_g: 12, carb_g: 4, fat_g: 21 },
+        diet_tags: ["keto", "vegetarian"],
+        image_url: "https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg"
+      }
+    ]
+  },
+  {
+    day_plan_id: "f7b9d2e4-c182-4a6b-b047-d9e3a8c5f741",
+    diet_tags: ["vegan"],
+    total_kcal: 2100,
+    meals: [
+      {
+        meal_type: "breakfast",
+        meal_name: "Berry Almond Overnight Oats",
+        ingredients: ["1/2 cup rolled oats", "1 cup almond milk", "1 tbsp chia seeds", "1 tbsp maple syrup", "1/2 cup mixed berries", "2 tbsp sliced almonds"],
+        cooking_instructions: "In a jar, combine oats, almond milk, chia seeds, and maple syrup. Stir well, seal, and refrigerate overnight. In the morning, top with mixed berries and sliced almonds before serving.",
+        estimated_macros: { kcal: 420, protein_g: 12, carb_g: 65, fat_g: 14 },
+        diet_tags: ["vegan", "vegetarian"],
+        image_url: "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg"
+      },
+      {
+        meal_type: "lunch",
+        meal_name: "Mediterranean Quinoa Bowl",
+        ingredients: ["3/4 cup cooked quinoa", "1/2 cup chickpeas", "1/4 cup diced cucumber", "1/4 cup diced tomatoes", "2 tbsp kalamata olives", "2 tbsp tahini dressing", "fresh herbs"],
+        cooking_instructions: "Layer cooked quinoa in a bowl. Top with chickpeas, cucumber, tomatoes, and olives. Drizzle with tahini dressing (made from 2 tbsp tahini, 1 tbsp lemon juice, 1 tbsp water, pinch of salt). Garnish with fresh herbs like parsley or mint.",
+        estimated_macros: { kcal: 480, protein_g: 18, carb_g: 72, fat_g: 16 },
+        diet_tags: ["vegan", "vegetarian", "mediterranean"],
+        image_url: "https://images.pexels.com/photos/1640770/pexels-photo-1640770.jpeg"
+      },
+      {
+        meal_type: "dinner",
+        meal_name: "Coconut Curry Vegetable Stir-Fry",
+        ingredients: ["1 block firm tofu, cubed", "1 cup broccoli florets", "1 red bell pepper, sliced", "1/2 cup snap peas", "1/3 cup coconut milk", "2 tbsp curry paste", "1 tbsp soy sauce", "1 tsp maple syrup", "fresh lime"],
+        cooking_instructions: "Press tofu to remove excess water, then cube. In a wok, stir-fry tofu until golden. Add vegetables and cook until tender-crisp. In a small bowl, mix coconut milk, curry paste, soy sauce, and maple syrup. Pour sauce over tofu and vegetables, simmer for 3-4 minutes. Serve with a squeeze of lime.",
+        estimated_macros: { kcal: 520, protein_g: 25, carb_g: 38, fat_g: 32 },
+        diet_tags: ["vegan", "vegetarian"],
+        image_url: "https://images.pexels.com/photos/723198/pexels-photo-723198.jpeg"
+      },
+      {
+        meal_type: "snack",
+        meal_name: "Spiced Roasted Chickpeas",
+        ingredients: ["1/2 cup chickpeas", "1 tsp olive oil", "1/4 tsp cumin", "1/4 tsp paprika", "1/8 tsp garlic powder", "pinch of salt"],
+        cooking_instructions: "Preheat oven to 400°F. Drain and rinse chickpeas, pat dry. Toss with olive oil and spices. Spread on baking sheet and roast for 25-30 minutes, stirring halfway, until crispy. Let cool before eating.",
+        estimated_macros: { kcal: 180, protein_g: 9, carb_g: 20, fat_g: 8 },
+        diet_tags: ["vegan", "vegetarian"],
+        image_url: "https://images.pexels.com/photos/5848182/pexels-photo-5848182.jpeg"
+      }
+    ]
+  }
+];
