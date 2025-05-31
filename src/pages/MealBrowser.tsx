@@ -24,6 +24,9 @@ const MealBrowser: React.FC = () => {
       const allMeals = mockMealPlans.flatMap(plan => plan.meals);
       let filteredMeals = [...allMeals];
 
+      // Breakpoint for debugging
+      debugger;
+
       // Apply meal type filter
       if (selectedMealType !== 'all') {
         filteredMeals = filteredMeals.filter(meal => meal.meal_type === selectedMealType);
