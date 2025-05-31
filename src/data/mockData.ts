@@ -88,7 +88,6 @@ export const mockMealPlans: DayPlan[] = [
       }
     ]
   },
-  // Adding new breakfast meals
   {
     day_plan_id: "g8h9i0j1-k2l3-m4n5-o6p7-q8r9s0t1u2v3",
     diet_tags: ["balanced"],
@@ -102,6 +101,15 @@ export const mockMealPlans: DayPlan[] = [
         estimated_macros: { kcal: 450, protein_g: 20, carb_g: 45, fat_g: 25 },
         diet_tags: ["balanced"],
         image_url: "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg"
+      },
+      {
+        meal_type: "dinner",
+        meal_name: "Herb-Crusted Chicken Breast",
+        ingredients: ["6 oz chicken breast", "2 tbsp mixed herbs", "1 cup roasted vegetables", "1/2 cup quinoa", "1 tbsp olive oil"],
+        cooking_instructions: "Preheat oven to 400°F. Season chicken with herbs, salt, and pepper. Bake for 25 minutes. Cook quinoa. Roast vegetables with olive oil. Serve chicken over quinoa with vegetables.",
+        estimated_macros: { kcal: 480, protein_g: 42, carb_g: 35, fat_g: 18 },
+        diet_tags: ["balanced", "high-protein"],
+        image_url: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg"
       }
     ]
   },
@@ -118,10 +126,18 @@ export const mockMealPlans: DayPlan[] = [
         estimated_macros: { kcal: 420, protein_g: 15, carb_g: 55, fat_g: 18 },
         diet_tags: ["vegetarian"],
         image_url: "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg"
+      },
+      {
+        meal_type: "dinner",
+        meal_name: "Mushroom and Truffle Risotto",
+        ingredients: ["1 cup arborio rice", "2 cups mixed mushrooms", "4 cups vegetable broth", "1/2 cup parmesan", "truffle oil", "fresh herbs"],
+        cooking_instructions: "Sauté mushrooms. Cook rice with broth gradually. Stir in parmesan and truffle oil. Garnish with herbs.",
+        estimated_macros: { kcal: 550, protein_g: 18, carb_g: 65, fat_g: 22 },
+        diet_tags: ["vegetarian"],
+        image_url: "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg"
       }
     ]
   },
-  // Adding new lunch meals
   {
     day_plan_id: "i0j1k2l3-m4n5-o6p7-q8r9-s0t1u2v3w4x5",
     diet_tags: ["high-protein"],
