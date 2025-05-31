@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FilterX } from 'lucide-react';
 import { DietType, Meal } from '../types';
-import { mockMealPlans } from '../data/mockData';
+import { meals } from '../data/mockData';
 import SearchBar from '../components/SearchBar';
 import DietFilter from '../components/DietFilter';
 import MealTypeFilter from '../components/MealTypeFilter';
@@ -14,45 +14,41 @@ const MealBrowser: React.FC = () => {
   const [selectedMealType, setSelectedMealType] = useState('all');
   const [minProtein, setMinProtein] = useState(0);
   const [maxCalories, setMaxCalories] = useState(1000);
-  const [meals, setMeals] = useState<Meal[]>([]);
+  const [filteredMeals, setFilteredMeals] = useState<Meal[]>([]);
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
     // Simulate loading
     setLoading(true);
     setTimeout(() => {
-      const allMeals = mockMealPlans.flatMap(plan => plan.meals);
-      let filteredMeals = [...allMeals];
-
-      // Breakpoint for debugging
-      debugger;
+      let filtered = [...meals];
 
       // Apply meal type filter
       if (selectedMealType !== 'all') {
-        filteredMeals = filteredMeals.filter(meal => meal.meal_type === selectedMealType);
+        filtered = filtered.filter(meal => meal.meal_type === selectedMealType);
       }
 
       // Apply diet filter
       if (selectedDiet !== 'all') {
-        filteredMeals = filteredMeals.filter(meal => meal.diet_tags.includes(selectedDiet));
+        filtered = filtered.filter(meal => meal.tags.includes(selectedDiet));
       }
 
       // Apply macro filters
-      filteredMeals = filteredMeals.filter(meal => 
-        meal.estimated_macros.protein_g >= minProtein &&
-        meal.estimated_macros.kcal <= maxCalories
+      filtered = filtered.filter(meal => 
+        meal.protein >= minProtein &&
+        meal.calories <= maxCalories
       );
 
       // Apply search term
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
-        filteredMeals = filteredMeals.filter(meal =>
-          meal.meal_name.toLowerCase().includes(searchLower) ||
-          meal.ingredients.some(i => i.toLowerCase().includes(searchLower))
+        filtered = filtered.filter(meal =>
+          meal.name.toLowerCase().includes(searchLower) ||
+          meal.ingredients.some(i => i.name.toLowerCase().includes(searchLower))
         );
       }
 
-      setMeals(filteredMeals);
+      setFilteredMeals(filtered);
       setLoading(false);
     }, 500); // Simulate network delay
   }, [searchTerm, selectedDiet, selectedMealType, minProtein, maxCalories]);
@@ -115,7 +111,7 @@ const MealBrowser: React.FC = () => {
         <div className="lg:w-3/4">
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-gray-800">
-              {loading ? 'Loading meals...' : `${meals.length} ${meals.length === 1 ? 'Meal' : 'Meals'} Found`}
+              {loading ? 'Loading meals...' : `${filteredMeals.length} ${filteredMeals.length === 1 ? 'Meal' : 'Meals'} Found`}
             </h2>
             {isFiltering && (
               <div className="text-sm text-gray-600 mt-1">
@@ -130,9 +126,9 @@ const MealBrowser: React.FC = () => {
                 <div key={i} className="bg-gray-100 h-96 rounded-lg animate-pulse" />
               ))}
             </div>
-          ) : meals.length > 0 ? (
+          ) : filteredMeals.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-              {meals.map((meal, index) => (
+              {filteredMeals.map((meal, index) => (
                 <MealCard key={index} meal={meal} />
               ))}
             </div>

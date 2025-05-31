@@ -3,6 +3,7 @@ import { ChevronDown, ChevronUp, Clock } from 'lucide-react';
 import { Meal } from '../types';
 import MacroBadge from './MacroBadge';
 import DietTag from './DietTag';
+import { getPlaceholderImage } from '../data/mockData';
 
 interface MealCardProps {
   meal: Meal;
@@ -30,17 +31,17 @@ const MealCard: React.FC<MealCardProps> = ({ meal }) => {
     }
   };
 
+  const imageUrl = meal.image_url || getPlaceholderImage(meal.meal_type);
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
-      {meal.image_url && (
-        <div className="h-48 w-full overflow-hidden">
-          <img 
-            src={meal.image_url} 
-            alt={meal.meal_name} 
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-          />
-        </div>
-      )}
+      <div className="h-48 w-full overflow-hidden">
+        <img 
+          src={imageUrl}
+          alt={meal.name}
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+        />
+      </div>
       
       <div className="p-4">
         <div className="flex items-start justify-between">
@@ -51,7 +52,7 @@ const MealCard: React.FC<MealCardProps> = ({ meal }) => {
                 {meal.meal_type}
               </span>
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-2">{meal.meal_name}</h3>
+            <h3 className="text-xl font-bold text-gray-800 mb-2">{meal.name}</h3>
           </div>
           <button 
             onClick={toggleExpand}
@@ -63,35 +64,37 @@ const MealCard: React.FC<MealCardProps> = ({ meal }) => {
         </div>
         
         <div className="flex flex-wrap gap-2 mt-3 mb-3">
-          <MacroBadge name="Calories" value={meal.estimated_macros.kcal} unit="kcal" />
-          <MacroBadge name="Protein" value={meal.estimated_macros.protein_g} unit="g" />
-          <MacroBadge name="Carbs" value={meal.estimated_macros.carb_g} unit="g" />
-          <MacroBadge name="Fat" value={meal.estimated_macros.fat_g} unit="g" />
+          <MacroBadge name="Calories" value={meal.calories} unit="kcal" />
+          <MacroBadge name="Protein" value={meal.protein} unit="g" />
+          <MacroBadge name="Carbs" value={meal.carbs} unit="g" />
+          <MacroBadge name="Fat" value={meal.fat} unit="g" />
+        </div>
+
+        <div className="flex items-center gap-2 text-sm text-gray-600 mt-2">
+          <Clock size={16} />
+          <span>{meal.prep_time} min prep time</span>
         </div>
         
         <div className="flex flex-wrap gap-1.5 mt-3">
-          {meal.diet_tags.map((tag, index) => (
+          {meal.tags.map((tag, index) => (
             <DietTag key={index} diet={tag} size="small" />
           ))}
         </div>
         
         {expanded && (
           <div className="mt-4 pt-4 border-t border-gray-100 animate-fadeIn">
+            {meal.description && (
+              <p className="text-gray-600 mb-4">{meal.description}</p>
+            )}
             <div className="mb-4">
               <h4 className="font-medium text-gray-800 mb-2">Ingredients</h4>
               <ul className="list-disc pl-5 space-y-1">
                 {meal.ingredients.map((ingredient, index) => (
-                  <li key={index} className="text-gray-600">{ingredient}</li>
+                  <li key={index} className="text-gray-600">
+                    {ingredient.amount} {ingredient.unit} {ingredient.name}
+                  </li>
                 ))}
               </ul>
-            </div>
-            
-            <div>
-              <div className="flex items-center gap-1 mb-2">
-                <Clock size={16} className="text-gray-500" />
-                <h4 className="font-medium text-gray-800">Instructions</h4>
-              </div>
-              <p className="text-gray-600">{meal.cooking_instructions}</p>
             </div>
           </div>
         )}

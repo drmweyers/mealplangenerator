@@ -1,26 +1,31 @@
-export interface Macros {
-  kcal: number;
-  protein_g: number;
-  carb_g: number;
-  fat_g: number;
+export interface Ingredient {
+  name: string;
+  amount: number;
+  unit: string;
+  description: string;
+  image_url: string;
+  image_filename: string;
 }
 
 export interface Meal {
+  name: string;
+  slug: string;
+  description?: string;
+  thumbnail_url: string;
+  thumbnail_filename: string;
+  image_url: string;
+  image_filename: string;
+  language_code: string;
+  calories: number;
+  protein: number;
+  carbs: number;
+  fat: number;
   meal_type: 'breakfast' | 'lunch' | 'dinner' | 'snack';
-  meal_name: string;
-  ingredients: string[];
-  cooking_instructions: string;
-  estimated_macros: Macros;
-  diet_tags: string[];
-  image_url?: string;
-  image_prompt?: string;
-}
-
-export interface DayPlan {
-  day_plan_id: string;
-  diet_tags: string[];
-  total_kcal: number;
-  meals: Meal[];
+  tags: string[];
+  prep_time: number;
+  ingredients: Ingredient[];
+  created_at: string;
+  updated_at: string;
 }
 
 export type DietType = 
