@@ -88,212 +88,69 @@ export const mockMealPlans: DayPlan[] = [
       }
     ]
   },
+  // Adding new breakfast meals
   {
-    day_plan_id: "c5e7f9a2-b384-4d1c-9e6f-2a8b3c4d5e6f",
-    diet_tags: ["mediterranean"],
+    day_plan_id: "g8h9i0j1-k2l3-m4n5-o6p7-q8r9s0t1u2v3",
+    diet_tags: ["balanced"],
     total_kcal: 2000,
     meals: [
       {
         meal_type: "breakfast",
-        meal_name: "Greek Yogurt Parfait with Honey & Figs",
-        ingredients: ["1 cup Greek yogurt", "2 fresh figs, quartered", "2 tbsp honey", "1/4 cup granola", "1 tbsp pistachios, chopped"],
-        cooking_instructions: "Layer half the yogurt in a glass. Add half the granola and figs. Drizzle with half the honey. Repeat layers. Top with chopped pistachios. Serve immediately while granola is still crunchy.",
-        estimated_macros: { kcal: 380, protein_g: 20, carb_g: 45, fat_g: 15 },
-        diet_tags: ["mediterranean", "vegetarian"],
-        image_url: "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg"
-      },
-      {
-        meal_type: "lunch",
-        meal_name: "Grilled Halloumi & Vegetable Skewers",
-        ingredients: ["200g halloumi cheese", "1 zucchini", "1 red onion", "12 cherry tomatoes", "2 tbsp olive oil", "1 tbsp oregano", "1 lemon"],
-        cooking_instructions: "Cut halloumi and vegetables into chunks. Thread onto skewers alternating ingredients. Brush with olive oil and sprinkle with oregano. Grill for 2-3 minutes per side until cheese is golden and vegetables are tender. Squeeze fresh lemon juice over before serving.",
-        estimated_macros: { kcal: 450, protein_g: 22, carb_g: 15, fat_g: 35 },
-        diet_tags: ["mediterranean", "vegetarian"],
-        image_url: "https://images.pexels.com/photos/1618906/pexels-photo-1618906.jpeg"
-      },
-      {
-        meal_type: "dinner",
-        meal_name: "Herb-Crusted Sea Bass with Roasted Mediterranean Vegetables",
-        ingredients: ["6 oz sea bass fillet", "2 tbsp fresh herbs (parsley, dill, oregano)", "1 cup mixed vegetables (eggplant, peppers, tomatoes)", "2 tbsp olive oil", "2 cloves garlic", "1 lemon"],
-        cooking_instructions: "Preheat oven to 400°F. Toss vegetables with 1 tbsp olive oil, garlic, and herbs. Roast for 20 minutes. Mix remaining herbs with breadcrumbs. Season fish, coat with herb mixture. Place on top of vegetables, drizzle with remaining oil. Bake 12-15 minutes until fish flakes easily.",
-        estimated_macros: { kcal: 420, protein_g: 35, carb_g: 20, fat_g: 25 },
-        diet_tags: ["mediterranean"],
-        image_url: "https://images.pexels.com/photos/3655916/pexels-photo-3655916.jpeg"
-      },
-      {
-        meal_type: "snack",
-        meal_name: "Marinated Olives with Citrus and Herbs",
-        ingredients: ["1 cup mixed olives", "1 orange, zested", "2 sprigs fresh rosemary", "2 cloves garlic", "2 tbsp olive oil"],
-        cooking_instructions: "Warm olive oil in a small pan. Add garlic and rosemary, cook for 1 minute until fragrant. Add olives and orange zest, toss to coat. Let marinate for at least 30 minutes before serving. Can be stored in an airtight container for up to 1 week.",
-        estimated_macros: { kcal: 200, protein_g: 2, carb_g: 5, fat_g: 20 },
-        diet_tags: ["mediterranean", "vegan", "vegetarian"],
-        image_url: "https://images.pexels.com/photos/4198566/pexels-photo-4198566.jpeg"
-      }
-    ]
-  },
-  {
-    day_plan_id: "d4e8c7b6-a293-4f5e-8d7c-9b8a7c6d5e4f",
-    diet_tags: ["high-protein"],
-    total_kcal: 2200,
-    meals: [
-      {
-        meal_type: "breakfast",
-        meal_name: "Protein Power Pancakes",
-        ingredients: ["1 scoop vanilla protein powder", "1 banana", "2 eggs", "1/4 cup oats", "1 tbsp Greek yogurt", "1/2 tsp cinnamon"],
-        cooking_instructions: "Blend all ingredients until smooth. Heat non-stick pan over medium heat. Pour batter to form pancakes. Cook until bubbles form, flip and cook other side until golden. Top with extra Greek yogurt and banana slices if desired.",
-        estimated_macros: { kcal: 400, protein_g: 35, carb_g: 45, fat_g: 12 },
-        diet_tags: ["high-protein"],
-        image_url: "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg"
-      },
-      {
-        meal_type: "lunch",
-        meal_name: "Turkey Quinoa Power Bowl",
-        ingredients: ["6 oz ground turkey", "1 cup cooked quinoa", "1 cup roasted broccoli", "1/2 cup cherry tomatoes", "1/4 avocado", "2 tbsp hummus"],
-        cooking_instructions: "Season and cook ground turkey until browned. Arrange quinoa in bowl, top with turkey, roasted broccoli, tomatoes, and avocado. Dollop with hummus and serve.",
-        estimated_macros: { kcal: 550, protein_g: 45, carb_g: 35, fat_g: 25 },
-        diet_tags: ["high-protein"],
-        image_url: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
-      },
-      {
-        meal_type: "dinner",
-        meal_name: "Grilled Chicken with Sweet Potato Mash",
-        ingredients: ["8 oz chicken breast", "1 large sweet potato", "2 cups spinach", "2 tbsp Greek yogurt", "1 tbsp olive oil", "herbs and spices"],
-        cooking_instructions: "Season chicken with herbs and spices. Grill until cooked through. Peel and cube sweet potato, boil until tender. Mash with Greek yogurt. Sauté spinach in olive oil. Serve chicken over sweet potato mash with spinach.",
-        estimated_macros: { kcal: 520, protein_g: 50, carb_g: 40, fat_g: 20 },
-        diet_tags: ["high-protein"],
-        image_url: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg"
-      },
-      {
-        meal_type: "snack",
-        meal_name: "Protein Energy Balls",
-        ingredients: ["1 scoop protein powder", "1/2 cup oats", "2 tbsp peanut butter", "1 tbsp honey", "1 tbsp chia seeds", "splash of almond milk"],
-        cooking_instructions: "Mix protein powder, oats, and chia seeds. Add peanut butter and honey. Add almond milk gradually until mixture holds together. Roll into balls. Refrigerate for at least 30 minutes before serving.",
-        estimated_macros: { kcal: 280, protein_g: 20, carb_g: 25, fat_g: 12 },
-        diet_tags: ["high-protein", "vegetarian"],
-        image_url: "https://images.pexels.com/photos/1028598/pexels-photo-1028598.jpeg"
-      }
-    ]
-  },
-  {
-    day_plan_id: "b3a2c1d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
-    diet_tags: ["paleo"],
-    total_kcal: 1950,
-    meals: [
-      {
-        meal_type: "breakfast",
-        meal_name: "Sweet Potato Hash with Eggs",
-        ingredients: ["1 medium sweet potato", "2 eggs", "1/4 onion", "1 bell pepper", "2 tbsp coconut oil", "fresh herbs"],
-        cooking_instructions: "Dice sweet potato, onion, and pepper. Heat coconut oil, cook sweet potato until almost tender. Add onion and pepper, cook until vegetables are soft. Create wells in the hash, crack eggs into them. Cover and cook until eggs are set.",
-        estimated_macros: { kcal: 420, protein_g: 16, carb_g: 35, fat_g: 28 },
-        diet_tags: ["paleo"],
-        image_url: "https://images.pexels.com/photos/3850838/pexels-photo-3850838.jpeg"
-      },
-      {
-        meal_type: "lunch",
-        meal_name: "Grilled Chicken Cobb Salad",
-        ingredients: ["6 oz grilled chicken", "2 cups mixed greens", "1 hard-boiled egg", "1/2 avocado", "4 cherry tomatoes", "2 tbsp olive oil", "1 tbsp balsamic vinegar"],
-        cooking_instructions: "Grill chicken breast, let rest, then slice. Arrange greens on plate. Top with sliced chicken, quartered egg, sliced avocado, and tomatoes. Whisk olive oil and vinegar, drizzle over salad.",
-        estimated_macros: { kcal: 480, protein_g: 40, carb_g: 12, fat_g: 32 },
-        diet_tags: ["paleo"],
-        image_url: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
-      },
-      {
-        meal_type: "dinner",
-        meal_name: "Herb-Crusted Salmon with Roasted Vegetables",
-        ingredients: ["6 oz salmon fillet", "2 cups mixed vegetables", "2 tbsp olive oil", "fresh herbs", "1 lemon", "sea salt"],
-        cooking_instructions: "Preheat oven to 400°F. Toss vegetables with 1 tbsp olive oil and herbs. Roast for 20 minutes. Season salmon with herbs and salt. Place on baking sheet, drizzle with remaining oil. Roast 12-15 minutes until cooked through. Serve with lemon wedges.",
-        estimated_macros: { kcal: 450, protein_g: 35, carb_g: 20, fat_g: 30 },
-        diet_tags: ["paleo"],
-        image_url: "https://images.pexels.com/photos/3655916/pexels-photo-3655916.jpeg"
-      },
-      {
-        meal_type: "snack",
-        meal_name: "Trail Mix",
-        ingredients: ["1/4 cup mixed nuts", "2 tbsp pumpkin seeds", "1 tbsp dried cranberries", "1 tbsp coconut flakes"],
-        cooking_instructions: "Mix all ingredients in a bowl. Store in an airtight container.",
-        estimated_macros: { kcal: 200, protein_g: 8, carb_g: 12, fat_g: 16 },
-        diet_tags: ["paleo", "vegan"],
-        image_url: "https://images.pexels.com/photos/1508666/pexels-photo-1508666.jpeg"
-      }
-    ]
-  },
-  {
-    day_plan_id: "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
-    diet_tags: ["balanced"],
-    total_kcal: 2100,
-    meals: [
-      {
-        meal_type: "breakfast",
-        meal_name: "Quinoa Breakfast Bowl with Berries",
-        ingredients: ["1 cup cooked quinoa", "1 cup mixed berries", "1/4 cup almonds", "1 tbsp honey", "1 cup almond milk", "1/2 tsp cinnamon"],
-        cooking_instructions: "Warm cooked quinoa with almond milk and cinnamon. Top with mixed berries, almonds, and a drizzle of honey. Serve warm.",
-        estimated_macros: { kcal: 420, protein_g: 12, carb_g: 65, fat_g: 16 },
-        diet_tags: ["balanced", "vegetarian"],
+        meal_name: "Whole Grain Breakfast Bowl",
+        ingredients: ["1 cup cooked farro", "1 poached egg", "1/2 avocado", "1 cup sautéed kale", "2 tbsp pesto", "cherry tomatoes"],
+        cooking_instructions: "Cook farro according to package instructions. Poach egg. Sauté kale with garlic. Assemble bowl with farro, top with kale, sliced avocado, poached egg, halved cherry tomatoes, and drizzle with pesto.",
+        estimated_macros: { kcal: 450, protein_g: 20, carb_g: 45, fat_g: 25 },
+        diet_tags: ["balanced"],
         image_url: "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg"
       }
     ]
   },
   {
-    day_plan_id: "b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q7",
+    day_plan_id: "h9i0j1k2-l3m4-n5o6-p7q8-r9s0t1u2v3w4",
+    diet_tags: ["vegetarian"],
+    total_kcal: 2100,
+    meals: [
+      {
+        meal_type: "breakfast",
+        meal_name: "Ricotta Toast with Honey and Figs",
+        ingredients: ["2 slices sourdough bread", "1/2 cup ricotta", "2 fresh figs", "2 tbsp honey", "1 tbsp pistachios", "fresh thyme"],
+        cooking_instructions: "Toast bread until golden. Spread ricotta on toast. Slice figs and arrange on top. Drizzle with honey, sprinkle with chopped pistachios and thyme leaves.",
+        estimated_macros: { kcal: 420, protein_g: 15, carb_g: 55, fat_g: 18 },
+        diet_tags: ["vegetarian"],
+        image_url: "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg"
+      }
+    ]
+  },
+  // Adding new lunch meals
+  {
+    day_plan_id: "i0j1k2l3-m4n5-o6p7-q8r9-s0t1u2v3w4x5",
     diet_tags: ["high-protein"],
     total_kcal: 2200,
     meals: [
       {
-        meal_type: "breakfast",
-        meal_name: "Protein-Packed Breakfast Burrito",
-        ingredients: ["3 egg whites", "1 whole egg", "3 oz turkey sausage", "1/2 cup black beans", "1/4 avocado", "1 whole wheat tortilla", "salsa"],
-        cooking_instructions: "Scramble eggs and cook turkey sausage. Warm tortilla, layer with eggs, sausage, black beans, and avocado. Top with salsa and roll up.",
-        estimated_macros: { kcal: 450, protein_g: 35, carb_g: 30, fat_g: 22 },
+        meal_type: "lunch",
+        meal_name: "Asian-Style Tuna Poke Bowl",
+        ingredients: ["6 oz sushi-grade tuna", "1 cup brown rice", "1 cup edamame", "1/2 avocado", "seaweed strips", "soy sauce", "sesame oil"],
+        cooking_instructions: "Cube tuna. Cook rice. Steam edamame. Make dressing with soy sauce and sesame oil. Assemble bowl with rice, tuna, edamame, sliced avocado, and seaweed. Drizzle with dressing.",
+        estimated_macros: { kcal: 550, protein_g: 40, carb_g: 45, fat_g: 25 },
         diet_tags: ["high-protein"],
-        image_url: "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg"
+        image_url: "https://images.pexels.com/photos/2323398/pexels-photo-2323398.jpeg"
       }
     ]
   },
   {
-    day_plan_id: "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8",
+    day_plan_id: "j1k2l3m4-n5o6-p7q8-r9s0-t1u2v3w4x5y6",
     diet_tags: ["mediterranean"],
     total_kcal: 2000,
     meals: [
       {
         meal_type: "lunch",
-        meal_name: "Mediterranean Chickpea Bowl",
-        ingredients: ["1 cup chickpeas", "2 cups mixed greens", "1/4 cup feta cheese", "10 kalamata olives", "1/2 cucumber", "cherry tomatoes", "olive oil", "lemon juice"],
-        cooking_instructions: "Combine chickpeas, greens, diced cucumber, and tomatoes in a bowl. Top with crumbled feta and olives. Drizzle with olive oil and lemon juice. Season with herbs and serve.",
-        estimated_macros: { kcal: 400, protein_g: 15, carb_g: 45, fat_g: 22 },
+        meal_name: "Greek Mezze Plate",
+        ingredients: ["1/2 cup hummus", "4 falafels", "1/2 cup tzatziki", "mixed olives", "pita bread", "cucumber", "cherry tomatoes"],
+        cooking_instructions: "Arrange hummus and tzatziki in bowls. Heat falafels. Cut pita into triangles. Arrange all components on a plate with vegetables and olives.",
+        estimated_macros: { kcal: 480, protein_g: 15, carb_g: 50, fat_g: 25 },
         diet_tags: ["mediterranean", "vegetarian"],
-        image_url: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
-      }
-    ]
-  },
-  {
-    day_plan_id: "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
-    diet_tags: ["keto"],
-    total_kcal: 1900,
-    meals: [
-      {
-        meal_type: "dinner",
-        meal_name: "Butter-Basted Ribeye with Garlic Mushrooms",
-        ingredients: ["8 oz ribeye steak", "2 cups mushrooms", "3 cloves garlic", "2 tbsp butter", "1 sprig rosemary", "salt", "pepper"],
-        cooking_instructions: "Season steak with salt and pepper. Cook in hot pan 4-5 minutes per side. Add butter, garlic, and rosemary, baste steak. Remove steak to rest. Cook mushrooms in same pan until golden. Serve steak topped with mushrooms.",
-        estimated_macros: { kcal: 650, protein_g: 45, carb_g: 8, fat_g: 48 },
-        diet_tags: ["keto", "high-protein"],
-        image_url: "https://images.pexels.com/photos/3535383/pexels-photo-3535383.jpeg"
-      }
-    ]
-  },
-  {
-    day_plan_id: "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
-    diet_tags: ["vegan"],
-    total_kcal: 2000,
-    meals: [
-      {
-        meal_type: "snack",
-        meal_name: "Energy-Boosting Date Balls",
-        ingredients: ["1 cup dates", "1/2 cup almonds", "1/4 cup coconut flakes", "2 tbsp chia seeds", "1 tbsp cacao powder"],
-        cooking_instructions: "Process dates and almonds in food processor until finely chopped. Add coconut, chia seeds, and cacao. Pulse until well combined. Roll into balls. Refrigerate for 30 minutes before serving.",
-        estimated_macros: { kcal: 200, protein_g: 5, carb_g: 25, fat_g: 12 },
-        diet_tags: ["vegan", "vegetarian"],
-        image_url: "https://images.pexels.com/photos/1028598/pexels-photo-1028598.jpeg"
+        image_url: "https://images.pexels.com/photos/1618906/pexels-photo-1618906.jpeg"
       }
     ]
   }
