@@ -1,5 +1,7 @@
+import { Meal } from '../types';
+
 // Import JSON data directly
-const meals = [
+export const meals: Meal[] = [
   {
     "name": "Avocado Toast with Poached Eggs",
     "slug": "avocado-toast-with-poached-eggs",
@@ -86,10 +88,6 @@ const meals = [
   },
   // ... rest of the meals data
 ];
-
-import { Meal } from '../types';
-
-export const meals: Meal[] = meals;
 
 // Helper function to get a placeholder image URL based on meal type
 export function getPlaceholderImage(mealType: string): string {
