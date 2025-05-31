@@ -1,5 +1,5 @@
 // Import JSON data directly
-import mealsData from './meals.JSON' with { type: 'json' };
+import mealsData from './meals.JSON\' with { type: 'json' };
 import { Meal } from '../types';
 
 export const meals: Meal[] = mealsData;
