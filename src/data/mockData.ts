@@ -216,5 +216,85 @@ export const mockMealPlans: DayPlan[] = [
         image_url: "https://images.pexels.com/photos/1508666/pexels-photo-1508666.jpeg"
       }
     ]
+  },
+  {
+    day_plan_id: "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+    diet_tags: ["balanced"],
+    total_kcal: 2100,
+    meals: [
+      {
+        meal_type: "breakfast",
+        meal_name: "Quinoa Breakfast Bowl with Berries",
+        ingredients: ["1 cup cooked quinoa", "1 cup mixed berries", "1/4 cup almonds", "1 tbsp honey", "1 cup almond milk", "1/2 tsp cinnamon"],
+        cooking_instructions: "Warm cooked quinoa with almond milk and cinnamon. Top with mixed berries, almonds, and a drizzle of honey. Serve warm.",
+        estimated_macros: { kcal: 420, protein_g: 12, carb_g: 65, fat_g: 16 },
+        diet_tags: ["balanced", "vegetarian"],
+        image_url: "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg"
+      }
+    ]
+  },
+  {
+    day_plan_id: "b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q7",
+    diet_tags: ["high-protein"],
+    total_kcal: 2200,
+    meals: [
+      {
+        meal_type: "breakfast",
+        meal_name: "Protein-Packed Breakfast Burrito",
+        ingredients: ["3 egg whites", "1 whole egg", "3 oz turkey sausage", "1/2 cup black beans", "1/4 avocado", "1 whole wheat tortilla", "salsa"],
+        cooking_instructions: "Scramble eggs and cook turkey sausage. Warm tortilla, layer with eggs, sausage, black beans, and avocado. Top with salsa and roll up.",
+        estimated_macros: { kcal: 450, protein_g: 35, carb_g: 30, fat_g: 22 },
+        diet_tags: ["high-protein"],
+        image_url: "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg"
+      }
+    ]
+  },
+  {
+    day_plan_id: "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8",
+    diet_tags: ["mediterranean"],
+    total_kcal: 2000,
+    meals: [
+      {
+        meal_type: "lunch",
+        meal_name: "Mediterranean Chickpea Bowl",
+        ingredients: ["1 cup chickpeas", "2 cups mixed greens", "1/4 cup feta cheese", "10 kalamata olives", "1/2 cucumber", "cherry tomatoes", "olive oil", "lemon juice"],
+        cooking_instructions: "Combine chickpeas, greens, diced cucumber, and tomatoes in a bowl. Top with crumbled feta and olives. Drizzle with olive oil and lemon juice. Season with herbs and serve.",
+        estimated_macros: { kcal: 400, protein_g: 15, carb_g: 45, fat_g: 22 },
+        diet_tags: ["mediterranean", "vegetarian"],
+        image_url: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+      }
+    ]
+  },
+  {
+    day_plan_id: "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
+    diet_tags: ["keto"],
+    total_kcal: 1900,
+    meals: [
+      {
+        meal_type: "dinner",
+        meal_name: "Butter-Basted Ribeye with Garlic Mushrooms",
+        ingredients: ["8 oz ribeye steak", "2 cups mushrooms", "3 cloves garlic", "2 tbsp butter", "1 sprig rosemary", "salt", "pepper"],
+        cooking_instructions: "Season steak with salt and pepper. Cook in hot pan 4-5 minutes per side. Add butter, garlic, and rosemary, baste steak. Remove steak to rest. Cook mushrooms in same pan until golden. Serve steak topped with mushrooms.",
+        estimated_macros: { kcal: 650, protein_g: 45, carb_g: 8, fat_g: 48 },
+        diet_tags: ["keto", "high-protein"],
+        image_url: "https://images.pexels.com/photos/3535383/pexels-photo-3535383.jpeg"
+      }
+    ]
+  },
+  {
+    day_plan_id: "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
+    diet_tags: ["vegan"],
+    total_kcal: 2000,
+    meals: [
+      {
+        meal_type: "snack",
+        meal_name: "Energy-Boosting Date Balls",
+        ingredients: ["1 cup dates", "1/2 cup almonds", "1/4 cup coconut flakes", "2 tbsp chia seeds", "1 tbsp cacao powder"],
+        cooking_instructions: "Process dates and almonds in food processor until finely chopped. Add coconut, chia seeds, and cacao. Pulse until well combined. Roll into balls. Refrigerate for 30 minutes before serving.",
+        estimated_macros: { kcal: 200, protein_g: 5, carb_g: 25, fat_g: 12 },
+        diet_tags: ["vegan", "vegetarian"],
+        image_url: "https://images.pexels.com/photos/1028598/pexels-photo-1028598.jpeg"
+      }
+    ]
   }
 ];
