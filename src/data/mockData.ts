@@ -169,5 +169,71 @@ export const mockMealPlans: DayPlan[] = [
         image_url: "https://images.pexels.com/photos/1618906/pexels-photo-1618906.jpeg"
       }
     ]
+  },
+  {
+    day_plan_id: "fitness-plan-1",
+    diet_tags: ["high-protein", "balanced"],
+    total_kcal: 2200,
+    meals: [
+      {
+        meal_type: "breakfast",
+        meal_name: "Power Protein Oatmeal Bowl",
+        ingredients: ["1 cup steel-cut oats", "2 scoops whey protein", "1 banana", "2 tbsp almond butter", "1 tbsp chia seeds", "1/2 cup mixed berries"],
+        cooking_instructions: "Cook oats according to package. Stir in protein powder. Top with sliced banana, almond butter, chia seeds, and berries.",
+        estimated_macros: { kcal: 480, protein_g: 35, carb_g: 55, fat_g: 16 },
+        diet_tags: ["high-protein", "balanced"],
+        image_url: "https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg"
+      },
+      {
+        meal_type: "lunch",
+        meal_name: "Lean Turkey Buddha Bowl",
+        ingredients: ["6 oz ground turkey", "1 cup quinoa", "2 cups mixed greens", "1/2 sweet potato", "1/4 avocado", "2 tbsp olive oil"],
+        cooking_instructions: "Cook quinoa. Season and cook turkey. Roast sweet potato. Assemble bowl with greens, quinoa, turkey, and toppings.",
+        estimated_macros: { kcal: 550, protein_g: 42, carb_g: 45, fat_g: 25 },
+        diet_tags: ["high-protein", "balanced"],
+        image_url: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"
+      }
+    ]
+  },
+  {
+    day_plan_id: "athlete-plan-1",
+    diet_tags: ["high-protein", "balanced"],
+    total_kcal: 2400,
+    meals: [
+      {
+        meal_type: "breakfast",
+        meal_name: "Muscle Building Breakfast Stack",
+        ingredients: ["4 egg whites", "1 whole egg", "2 slices ezekiel bread", "1 cup spinach", "1/4 cup cottage cheese", "1 tbsp olive oil"],
+        cooking_instructions: "Scramble eggs with spinach. Toast bread. Serve with cottage cheese on the side.",
+        estimated_macros: { kcal: 420, protein_g: 38, carb_g: 30, fat_g: 18 },
+        diet_tags: ["high-protein", "balanced"],
+        image_url: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg"
+      },
+      {
+        meal_type: "lunch",
+        meal_name: "Grilled Chicken Power Bowl",
+        ingredients: ["6 oz chicken breast", "1 cup brown rice", "1 cup broccoli", "1/2 cup chickpeas", "2 tbsp tahini", "lemon juice"],
+        cooking_instructions: "Grill chicken. Cook rice. Steam broccoli. Mix tahini with lemon juice. Assemble bowl and drizzle with sauce.",
+        estimated_macros: { kcal: 580, protein_g: 45, carb_g: 50, fat_g: 22 },
+        diet_tags: ["high-protein", "balanced"],
+        image_url: "https://images.pexels.com/photos/1234535/pexels-photo-1234535.jpeg"
+      }
+    ]
+  },
+  {
+    day_plan_id: "endurance-plan-1",
+    diet_tags: ["balanced", "high-protein"],
+    total_kcal: 2300,
+    meals: [
+      {
+        meal_type: "dinner",
+        meal_name: "Wild-Caught Salmon Plate",
+        ingredients: ["6 oz salmon fillet", "1 cup quinoa", "2 cups roasted vegetables", "1 tbsp olive oil", "fresh herbs", "lemon"],
+        cooking_instructions: "Season salmon with herbs. Bake at 400°F for 12-15 minutes. Serve with quinoa and roasted vegetables.",
+        estimated_macros: { kcal: 520, protein_g: 42, carb_g: 35, fat_g: 24 },
+        diet_tags: ["high-protein", "balanced"],
+        image_url: "https://images.pexels.com/photos/3655916/pexels-photo-3655916.jpeg"
+      }
+    ]
   }
 ];
