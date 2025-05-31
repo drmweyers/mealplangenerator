@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FilterX } from 'lucide-react';
 import { DietType, Meal } from '../types';
-import { mockMealPlans } from '../data/mockData';
+import { supabase } from '../lib/supabase';
 import SearchBar from '../components/SearchBar';
 import DietFilter from '../components/DietFilter';
 import MealTypeFilter from '../components/MealTypeFilter';
@@ -14,49 +14,55 @@ const MealBrowser: React.FC = () => {
   const [selectedMealType, setSelectedMealType] = useState('all');
   const [minProtein, setMinProtein] = useState(0);
   const [maxCalories, setMaxCalories] = useState(1000);
+  const [meals, setMeals] = useState<Meal[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   
-  // Extract all meals from the meal plans
-  const allMeals = useMemo(() => {
-    const meals: Meal[] = [];
-    mockMealPlans.forEach(plan => {
-      plan.meals.forEach(meal => {
-        meals.push(meal);
-      });
-    });
-    return meals;
-  }, []);
-  
-  // Filter meals based on search term and filters
-  const filteredMeals = useMemo(() => {
-    return allMeals.filter(meal => {
-      // Search term filter
-      if (searchTerm && !meal.meal_name.toLowerCase().includes(searchTerm.toLowerCase()) && 
-          !meal.ingredients.some(i => i.toLowerCase().includes(searchTerm.toLowerCase()))) {
-        return false;
+  useEffect(() => {
+    fetchMeals();
+  }, [searchTerm, selectedDiet, selectedMealType, minProtein, maxCalories]);
+
+  const fetchMeals = async () => {
+    try {
+      setLoading(true);
+      let query = supabase
+        .from('meals')
+        .select('*');
+
+      // Apply meal type filter
+      if (selectedMealType !== 'all') {
+        query = query.eq('meal_type', selectedMealType);
       }
-      
-      // Diet filter
-      if (selectedDiet !== 'all' && !meal.diet_tags.includes(selectedDiet)) {
-        return false;
+
+      // Apply diet filter
+      if (selectedDiet !== 'all') {
+        query = query.contains('diet_tags', [selectedDiet]);
       }
-      
-      // Meal type filter
-      if (selectedMealType !== 'all' && meal.meal_type !== selectedMealType) {
-        return false;
+
+      // Apply macro filters using PostgREST filter
+      query = query.gte('estimated_macros->protein_g', minProtein)
+                  .lte('estimated_macros->kcal', maxCalories);
+
+      // Apply search term
+      if (searchTerm) {
+        query = query.or(`meal_name.ilike.%${searchTerm}%,ingredients.cs.{${searchTerm}}`);
       }
-      
-      // Macro filters
-      if (meal.estimated_macros.protein_g < minProtein) {
-        return false;
+
+      const { data, error: fetchError } = await query;
+
+      if (fetchError) {
+        throw new Error(fetchError.message);
       }
-      
-      if (meal.estimated_macros.kcal > maxCalories) {
-        return false;
-      }
-      
-      return true;
-    });
-  }, [allMeals, searchTerm, selectedDiet, selectedMealType, minProtein, maxCalories]);
+
+      setMeals(data || []);
+      setError(null);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred while fetching meals');
+      setMeals([]);
+    } finally {
+      setLoading(false);
+    }
+  };
   
   const resetFilters = () => {
     setSearchTerm('');
@@ -116,7 +122,7 @@ const MealBrowser: React.FC = () => {
         <div className="lg:w-3/4">
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-gray-800">
-              {filteredMeals.length} {filteredMeals.length === 1 ? 'Meal' : 'Meals'} Found
+              {loading ? 'Loading meals...' : `${meals.length} ${meals.length === 1 ? 'Meal' : 'Meals'} Found`}
             </h2>
             {isFiltering && (
               <div className="text-sm text-gray-600 mt-1">
@@ -125,10 +131,22 @@ const MealBrowser: React.FC = () => {
             )}
           </div>
           
-          {filteredMeals.length > 0 ? (
+          {error && (
+            <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-lg mb-6">
+              <p>{error}</p>
+            </div>
+          )}
+          
+          {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-              {filteredMeals.map((meal, index) => (
-                <MealCard key={index} meal={meal} />
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className="bg-gray-100 h-96 rounded-lg animate-pulse" />
+              ))}
+            </div>
+          ) : meals.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+              {meals.map((meal) => (
+                <MealCard key={meal.id} meal={meal} />
               ))}
             </div>
           ) : (
