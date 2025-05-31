@@ -1,7 +1,8 @@
-import * as mealsDataModule from './meals.JSON';
+// Import JSON data directly
+import mealsData from './meals.JSON' assert { type: 'json' };
 import { Meal } from '../types';
 
-export const meals: Meal[] = mealsDataModule.default;
+export const meals: Meal[] = mealsData;
 
 // Helper function to get a placeholder image URL based on meal type
 export function getPlaceholderImage(mealType: string): string {
